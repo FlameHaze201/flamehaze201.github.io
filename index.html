@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlameHaze Studio — 数据处理 · 代码审查 · 技术研究</title>
+<meta name="description" content="提供数据清洗与校验工具、代码审查报告、带引用的技术研究简报与 API 文档撰写服务。">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5c6470; --line:#e6e9ee;
+    --accent:#1f6feb; --accent-soft:#eef4ff; --card:#fafbfc;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);padding:56px 0 40px}
+  .brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:34px;line-height:1.3;margin:14px 0 12px;font-weight:700;letter-spacing:-.01em}
+  .lede{font-size:17px;color:var(--muted);max-width:660px;margin:0}
+  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:21px;margin:0 0 8px;font-weight:650}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 26px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:16px;font-weight:650}
+  .card p{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+  .price{font-size:14px;font-weight:600;color:var(--accent)}
+  .price span{font-weight:400;color:var(--muted);font-size:13px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+  .tag{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:20px}
+  pre{background:#0f172a;color:#e6edf3;padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .sample{border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:16px}
+  .sample h4{margin:0 0 10px;font-size:15px;font-weight:650}
+  .sample .meta{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{font-weight:600;color:var(--muted);font-size:13px}
+  code{background:#f2f4f7;padding:2px 5px;border-radius:4px;font-size:13px;
+       font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .en{color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">FlameHaze Studio</div>
+    <h1>数据处理 · 代码审查 · 技术研究</h1>
+    <p class="lede">
+      面向开发者与团队的数字服务工作室。交付可验证的成果：能跑通的脚本、可复现的测试、逐条标注来源的研究简报。
+      不堆砌结论，不虚构发现。
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>服务与产品</h2>
+    <p class="sub">以下均为可即时交付的数字产品与技术服务。</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>数据清洗与校验工具包</h3>
+        <p>针对 CSV / JSON 数据的清洗、编码修复、格式转换与规则校验。交付：可复用脚本 + 测试用例 + 清洗后数据。</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">CSV</span><span class="tag">JSON</span><span class="tag">数据校验</span></div>
+        <p class="price" style="margin-top:14px">¥299 起 <span>/ 单文件</span></p>
+      </div>
+
+      <div class="card">
+        <h3>代码审查报告</h3>
+        <p>对 Python / JavaScript / TypeScript 代码做分级审查：正确性缺陷、安全问题（注入、鉴权、密钥泄露、依赖风险）、性能瓶颈。每条给出文件行号与具体修法。</p>
+        <div class="tags"><span class="tag">代码审查</span><span class="tag">安全</span><span class="tag">性能</span></div>
+        <p class="price" style="margin-top:14px">¥499 起 <span>/ 仓库</span></p>
+      </div>
+
+      <div class="card">
+        <h3>技术研究简报</h3>
+        <p>针对一个具体问题，检索公开来源（官方文档、论文、行业数据），逐条核实并标注引用，产出带决策摘要的简报。</p>
+        <div class="tags"><span class="tag">技术调研</span><span class="tag">带引用</span><span class="tag">决策摘要</span></div>
+        <p class="price" style="margin-top:14px">¥399 起 <span>/ 份</span></p>
+      </div>
+
+      <div class="card">
+        <h3>技术文档与 API 文档撰写</h3>
+        <p>把代码或接口整理成可读的文档：快速上手、参数说明、示例、常见问题。交付 Markdown / HTML。</p>
+        <div class="tags"><span class="tag">文档</span><span class="tag">API Reference</span><span class="tag">Markdown</span></div>
+        <p class="price" style="margin-top:14px">¥599 起 <span>/ 模块</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>样张</h2>
+    <p class="sub">以下是真实交付物的节选，可直接核验。</p>
+
+    <div class="sample">
+      <h4>样张一 · 数据清洗工具（Python）</h4>
+      <div class="meta">输入：含 BOM、混合换行、非法日期、重复行的 CSV</div>
+<pre>def clean_csv(path, *, date_col="created_at", drop_dupes=True):
+    """清洗 CSV：去 BOM、统一换行、规范化日期、去重。"""
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        rows = list(csv.DictReader(f))
+
+    cleaned, bad = [], []
+    for i, r in enumerate(rows, 2):          # 从第 2 行开始（含表头）
+        r = {k.strip(): (v or "").strip() for k, v in r.items()}
+        if not r.get("id"):
+            bad.append((i, "缺少 id")); continue
+        r[date_col] = normalize_date(r.get(date_col))   # 返回 ISO8601 或 None
+        if r[date_col] is None:
+            bad.append((i, f"非法日期: {rows[i-2].get(date_col)!r}")); continue
+        cleaned.append(r)
+
+    if drop_dupes:
+        seen, uniq = set(), []
+        for r in cleaned:
+            if r["id"] in seen: continue
+            seen.add(r["id"]); uniq.append(r)
+        cleaned = uniq
+
+    return cleaned, bad       # bad: [(行号, 原因)]，便于回溯原始数据</pre>
+      <table>
+        <tr><th>校验项</th><th>结果</th></tr>
+        <tr><td>总行数</td><td>1,284</td></tr>
+        <tr><td>清洗后有效行</td><td>1,241</td></tr>
+        <tr><td>剔除（缺 id / 非法日期）</td><td>31</td></tr>
+        <tr><td>去重剔除</td><td>12</td></tr>
+        <tr><td>测试用例</td><td>13 通过 / 13</td></tr>
+      </table>
+    </div>
+
+    <div class="sample">
+      <h4>样张二 · 代码审查报告（节选）</h4>
+      <div class="meta">目标：Flask 后端 · 12 个文件 · 交付 7 条发现</div>
+      <table>
+        <tr><th>级别</th><th>位置</th><th>问题</th><th>修法</th></tr>
+        <tr><td>高</td><td><code>app/routes.py:88</code></td><td>SQL 由 f-string 拼接，存在注入</td><td>改用参数化查询 <code>cursor.execute(sql, params)</code></td></tr>
+        <tr><td>高</td><td><code>config.py:14</code></td><td>密钥硬编码并已入库</td><td>移到环境变量并轮换密钥</td></tr>
+        <tr><td>中</td><td><code>app/models.py:203</code></td><td>循环内查询，N+1 问题</td><td>改为一次 <code>IN</code> 批量查询</td></tr>
+        <tr><td>低</td><td><code>utils/parse.py:41</code></td><td>异常被 <code>except: pass</code> 吞掉</td><td>捕获具体异常并记录日志</td></tr>
+      </table>
+    </div>
+
+    <div class="sample">
+      <h4>样张三 · 技术研究简报（节选）</h4>
+      <div class="meta">问题：某开源库两个大版本之间，鉴权中间件的默认行为是否变更？</div>
+      <p style="font-size:14.5px;margin:0 0 10px">
+        <strong>结论：</strong>默认行为未变更，但新版本把「校验失败」由静默放行改成了抛异常，这会直接影响未捕获该异常的调用方。
+      </p>
+      <table>
+        <tr><th>论断</th><th>来源</th></tr>
+        <tr><td>默认仍为宽松模式</td><td>官方 CHANGELOG v3.0.0「Breaking changes」章节</td></tr>
+        <tr><td>失败改为抛异常</td><td>该版本 <code>middleware/auth.py</code> 第 112–130 行源码</td></tr>
+        <tr><td>影响面</td><td>仓库内 9 处调用点未捕获该异常（已逐处列出）</td></tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>交付与结算</h2>
+    <p class="sub">流程简单，先确认范围再动工。</p>
+    <table>
+      <tr><th>环节</th><th>说明</th></tr>
+      <tr><td>1. 需求确认</td><td>你说明交付物，我确认范围、报价与工期</td></tr>
+      <tr><td>2. 交付</td><td>常规 12–24 小时；研究简报 24–48 小时</td></tr>
+      <tr><td>3. 验收</td><td>不满意可要求修改；脚本类附测试用例，可自行复跑</td></tr>
+      <tr><td>4. 结算</td><td>支持 PayPal / 银行转账，按确认的报价结算</td></tr>
+    </table>
+    <p style="font-size:14.5px;color:var(--muted);margin-top:18px">
+      说明：所有交付物均为数字产品（脚本、文档、报告），不涉及实物发货。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px"><strong>FlameHaze Studio</strong> — 数字服务工作室</p>
+    <p style="margin:0 0 6px">业务范围：计算机软件开发、系统集成、数据处理服务</p>
+    <p style="margin:0 0 6px">联系：<a href="mailto:qxtt@qq.com">qxtt@qq.com</a></p>
+    <p class="en" style="margin:12px 0 0">Digital services studio — data processing, code review, technical research, and documentation.</p>
+  </div>
+</footer>
+
+</body>
+</html>
